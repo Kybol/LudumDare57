@@ -2,7 +2,7 @@ class_name Player extends CharacterBody2D
 
 signal caught
 
-@export_range(0.0, 1000.0, 1.0) var speed: float = 200.0
+@export_range(0.0, 1000.0, 1.0) var speed: float = 100.0
 
 var revealer_scene: PackedScene = preload("res://src/game/props/revealers/Revealer.tscn");
 

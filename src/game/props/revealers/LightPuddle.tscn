@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc5if6vyiiqwy"]
+
+[ext_resource type="Texture2D" uid="uid://b4gf145bu0tnv" path="res://src/assets/props/light/light_idle/Light_Idle1.png" id="1_2l3vk"]
+[ext_resource type="Script" uid="uid://44q3nirfp3lx" path="res://src/game/props/revealers/light_puddle.gd" id="1_u4h2j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2l3vk"]
+radius = 86.0233
+
+[node name="LightPuddle" type="Node2D"]
+script = ExtResource("1_u4h2j")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1.90735e-06, -1.90735e-06)
+scale = Vector2(1.70703, 1.70703)
+texture = ExtResource("1_2l3vk")
+
+[node name="RevealArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RevealArea"]
+shape = SubResource("CircleShape2D_2l3vk")
+
+[connection signal="area_entered" from="RevealArea" to="." method="_on_reveal_area_area_entered"]
+[connection signal="area_exited" from="RevealArea" to="." method="_on_reveal_area_area_exited"]

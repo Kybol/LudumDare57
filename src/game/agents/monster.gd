@@ -11,6 +11,7 @@ class_name Monster extends CharacterBody2D
 @onready var fade_out_timer: Timer = $FadeOutTimer
 
 var tween: Tween
+var fade
 
 
 func _ready() -> void:
@@ -40,18 +41,23 @@ func decrease_speed() -> void:
 	speed -= 20
 
 
-func fade_in() -> void:
+func fade_in(has_to_fade_out: bool = true) -> void:
 	if tween:
 		tween.kill()
 	tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-	var err = tween.tween_property(self, "modulate:a", 1.0, 1.0)
+	tween.tween_property(self, "modulate:a", 1.0, 1.0)
 	
-	fade_out_timer.start(3.0)
-	fade_out_timer.connect("timeout", fade_out)
+	if has_to_fade_out:
+		fade_out_timer.start(3.0)
+		if not fade_out_timer.is_connected("timeout", fade_out): 
+			fade_out_timer.connect("timeout", fade_out)
 
 
 func fade_out() -> void:
+	if fade_out_timer.is_connected("timeout", fade_out): 
+		fade_out_timer.disconnect("timeout", fade_out)
+	
 	if tween:
-		tween.kill
+		tween.kill()
 	tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-	var err = tween.tween_property(self, "modulate:a", 0.0, 1.0)
+	tween.tween_property(self, "modulate:a", 0.0, 1.0)
