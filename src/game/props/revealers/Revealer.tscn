@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d332hxcn8oksc"]
+
+[ext_resource type="Texture2D" uid="uid://bfs18nmc80k37" path="res://src/assets/placeholder_light.webp" id="1_1up7c"]
+
+[node name="Light" type="PointLight2D"]
+blend_mode = 2
+texture = ExtResource("1_1up7c")
+
+[node name="Timer" type="Timer" parent="."]

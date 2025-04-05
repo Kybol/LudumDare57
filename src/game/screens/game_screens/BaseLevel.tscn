@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl8pufj3vbct"]
+
+[ext_resource type="PackedScene" uid="uid://crw7i0ncjloyg" path="res://src/game/agents/Player.tscn" id="1_tt147"]
+[ext_resource type="Texture2D" uid="uid://cupr6vlq3k2nn" path="res://src/assets/test_carrot.png" id="2_8odx1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8odx1"]
+size = Vector2(366, 20)
+
+[node name="BaseLevel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AlwaysVisibleLayer" type="CanvasLayer" parent="."]
+
+[node name="Player" parent="AlwaysVisibleLayer" instance=ExtResource("1_tt147")]
+position = Vector2(580, 346)
+
+[node name="DarkLayer" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Floor" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = -50.0
+offset_right = 59.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0915858, 0.705839, 0.756643, 1)
+
+[node name="InvisibleLayer" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="InvisibleLayer"]
+position = Vector2(574, 309)
+
+[node name="ColorRect" type="ColorRect" parent="InvisibleLayer/StaticBody2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.5
+offset_top = -9.0
+offset_right = 182.5
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(1, 0.364706, 0.564706, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleLayer/StaticBody2D"]
+shape = SubResource("RectangleShape2D_8odx1")
+
+[node name="TestCarrot" type="Sprite2D" parent="InvisibleLayer"]
+position = Vector2(169.5, 457.5)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_8odx1")
