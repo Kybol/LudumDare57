@@ -4,7 +4,7 @@ signal animation_completed
 
 @export var frames_idle: Array[Texture] = []
 @export var frames_dying: Array[Texture] = []
-@export_range(0.0, 10.0) var max_active_time = 3.0
+@export_range(0.0, 10.0) var max_active_time = 2.4
 
 @onready var dying_timer: Timer = $DyingTimer
 
@@ -22,6 +22,9 @@ func activate() -> void:
 	
 	if not Globals.monster: return
 	Globals.monster.increase_speed()
+	
+	await animation_completed
+	animate_frames()
 
 
 func deactivate() -> void:
