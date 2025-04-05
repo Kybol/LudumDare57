@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://d332hxcn8oksc"]
+[gd_scene load_steps=3 format=3 uid="uid://d332hxcn8oksc"]
 
 [ext_resource type="Texture2D" uid="uid://bfs18nmc80k37" path="res://src/assets/placeholder_light.webp" id="1_1up7c"]
+[ext_resource type="Script" uid="uid://b0th8mvwxodv1" path="res://src/game/props/revealers/revealer.gd" id="2_p4u50"]
 
 [node name="Light" type="PointLight2D"]
 blend_mode = 2
 texture = ExtResource("1_1up7c")
+script = ExtResource("2_p4u50")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="DyingTimer" type="Timer" parent="."]

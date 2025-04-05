@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl8pufj3vbct"]
+[gd_scene load_steps=3 format=3 uid="uid://bl8pufj3vbct"]
 
-[ext_resource type="PackedScene" uid="uid://crw7i0ncjloyg" path="res://src/game/agents/Player.tscn" id="1_tt147"]
-[ext_resource type="Texture2D" uid="uid://cupr6vlq3k2nn" path="res://src/assets/test_carrot.png" id="2_8odx1"]
+[ext_resource type="Script" uid="uid://bwc40t3ykfjyd" path="res://src/game/screens/game_screens/base_level.gd" id="1_8odx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8odx1"]
 size = Vector2(366, 20)
@@ -13,11 +12,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8odx1")
 
 [node name="AlwaysVisibleLayer" type="CanvasLayer" parent="."]
 
-[node name="Player" parent="AlwaysVisibleLayer" instance=ExtResource("1_tt147")]
-position = Vector2(580, 346)
+[node name="StartMarker" type="Marker2D" parent="AlwaysVisibleLayer"]
+position = Vector2(104, 588)
 
 [node name="DarkLayer" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
@@ -59,8 +59,3 @@ color = Color(1, 0.364706, 0.564706, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleLayer/StaticBody2D"]
 shape = SubResource("RectangleShape2D_8odx1")
-
-[node name="TestCarrot" type="Sprite2D" parent="InvisibleLayer"]
-position = Vector2(169.5, 457.5)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("2_8odx1")

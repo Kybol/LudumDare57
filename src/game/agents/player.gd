@@ -22,3 +22,4 @@ func reveal_area() -> void:
 	root.add_child(revealer)
 	
 	revealer.global_position = global_position
+	revealer.activate()
