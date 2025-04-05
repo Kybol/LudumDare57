@@ -4,7 +4,7 @@ signal animation_completed
 
 @export var frames_idle: Array[Texture] = []
 @export var frames_dying: Array[Texture] = []
-@export_range(0.0, 10.0) var max_active_time = 2.4
+@export_range(0.0, 10.0) var max_active_time = 1.2
 
 @onready var dying_timer: Timer = $DyingTimer
 
@@ -22,9 +22,6 @@ func activate() -> void:
 	
 	if not Globals.monster: return
 	Globals.monster.increase_speed()
-	
-	await animation_completed
-	animate_frames()
 
 
 func deactivate() -> void:
@@ -40,12 +37,15 @@ func deactivate() -> void:
 
 func animate_frames(animation_name: String = "idle"):
 	var frames: Array[Texture] = frames_idle
+	var waiting_time: float = 0.1
+	
 	if animation_name != "idle":
 		frames = frames_dying
-		
+		waiting_time = 0.05
+
 	var frame_size: int = frames.size()
 	for i in range(0,frame_size):
 		self.texture = frames[i]
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(waiting_time).timeout
 	
 	animation_completed.emit()

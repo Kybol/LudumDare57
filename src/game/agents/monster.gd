@@ -1,7 +1,7 @@
 class_name Monster extends CharacterBody2D
 
 @export_range(0.0, 1000.0, 1.0) var min_speed: float = 50.0
-@export_range(0.0, 1000.0, 1.0) var max_speed: float = 1000.0
+@export_range(0.0, 1000.0, 1.0) var max_speed: float = 700.0
 @export_range(0.0, 1000.0, 1.0) var speed: float = min_speed
 @export var target: CharacterBody2D:
 	set(new_target):
@@ -25,7 +25,7 @@ func follow_noise(noise_source: Node2D) -> void:
 
 func increase_speed() -> void:
 	if speed >= max_speed: return
-	speed += 20
+	speed += 15
 
 
 func decrease_speed() -> void:

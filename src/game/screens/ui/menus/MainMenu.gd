@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 func on_play_button_pressed() -> void:
-	Utils.navigate_to("res://src/game/screens/game_screens/BaseLevel.tscn")
+	Utils.navigate_to("res://src/game/screens/test/lvl_monster.tscn")
 
 
 func on_quit_button_pressed() -> void:
