@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://buqiyp5gpy1ot"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f6s1w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pfvx8"]
+radius = 20.0998
+
+[node name="BaseAgent" type="CharacterBody2D"]
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f6s1w")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_pfvx8")

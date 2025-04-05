@@ -18,6 +18,13 @@ config/icon="res://icon.svg"
 [autoload]
 
 Utils="*res://src/globals/utils/Utils.gd"
+Globals="*res://src/globals/globals.gd"
+
+[display]
+
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
 
 [input]
 
@@ -27,3 +34,8 @@ ui_reveal={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Walls"
+2d_physics/layer_2="Player"

@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cum4n7ahu8bnp"]
+
+[ext_resource type="PackedScene" uid="uid://buqiyp5gpy1ot" path="res://src/game/agents/BaseAgent.tscn" id="1_wywik"]
+[ext_resource type="Script" uid="uid://df05mqw81adv3" path="res://src/game/agents/monster.gd" id="2_147ji"]
+
+[node name="Monster" groups=["monster"] instance=ExtResource("1_wywik")]
+collision_layer = 2
+script = ExtResource("2_147ji")
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+color = Color(1, 0, 0, 1)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]
+path_postprocessing = 1

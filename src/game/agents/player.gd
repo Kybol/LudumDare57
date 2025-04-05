@@ -1,10 +1,13 @@
 class_name Player extends CharacterBody2D
 
+signal caught
+
 @export_range(0.0, 1000.0, 1.0) var speed: float = 200.0
 
 var revealer_scene: PackedScene = preload("res://src/game/props/revealers/Revealer.tscn");
 
-func _process(delta: float) -> void:
+
+func _physics_process(_delta: float) -> void:
 	if Utils.is_input_revealing_used():
 		reveal_area()
 	
@@ -18,8 +21,13 @@ func _process(delta: float) -> void:
 
 func reveal_area() -> void:
 	var revealer: Light2D = revealer_scene.instantiate()
-	var root: Window = get_tree().root
-	root.add_child(revealer)
+	Globals.current_level.add_child(revealer)
 	
 	revealer.global_position = global_position
 	revealer.activate()
+
+
+func _on_detection_area_area_entered(area: Area2D) -> void:
+	if not area.owner.is_in_group("monster"): return
+	
+	caught.emit()

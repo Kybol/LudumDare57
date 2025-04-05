@@ -6,7 +6,7 @@ func navigate_to(scene: String) -> void:
 		print("Utils/navigate_to(scene) -> inexistant scene path")
 		return
 	
-	get_tree().change_scene_to_packed(sceneToNavigateTo)
+	get_tree().call_deferred("change_scene_to_packed", sceneToNavigateTo)
 
 
 func is_any_input_pressed() -> bool:

@@ -12,9 +12,15 @@ func activate() -> void:
 	is_active = true
 	
 	dying_timer.connect("timeout", deactivate)
-	dying_timer.start(active_time) 
+	dying_timer.start(active_time)
+	
+	if not Globals.monster: return
+	Globals.monster.increase_speed()
 
 
 func deactivate() -> void:
 	dying_timer.stop()
 	queue_free()
+	
+	if not Globals.monster: return
+	Globals.monster.decrease_speed()
