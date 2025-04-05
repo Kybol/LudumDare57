@@ -2,7 +2,7 @@ extends Node
 
 var monster: Monster
 var player: Player
-var current_level: BaseLevel
+var current_level
 
 
 func game_over() -> void:
