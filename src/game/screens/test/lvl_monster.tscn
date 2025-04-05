@@ -109,9 +109,6 @@ sources/0 = SubResource("TileSetAtlasSource_xwwwq")
 [node name="PlayerStartMarker" parent="AlwaysVisibleLayer" index="0"]
 position = Vector2(661, 591)
 
-[node name="DarkLayer" parent="." index="1"]
-visible = false
-
 [node name="MonsterStartMarker" parent="." index="3"]
 position = Vector2(847, 511)
 
@@ -133,6 +130,6 @@ scale = Vector2(0.81, 0.8)
 texture = ExtResource("3_cbdhw")
 
 [node name="PointLight2D3" type="PointLight2D" parent="." index="7"]
-position = Vector2(210, 586)
-scale = Vector2(0.6075, 0.58)
+position = Vector2(1048, 555)
+scale = Vector2(0.829375, 0.83)
 texture = ExtResource("3_cbdhw")
