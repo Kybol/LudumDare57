@@ -1,5 +1,9 @@
 extends PointLight2D
 
+signal animation_completed
+
+@export var frames_idle: Array[Texture] = []
+@export var frames_dying: Array[Texture] = []
 @export_range(0.0, 10.0) var max_active_time = 3.0
 
 @onready var dying_timer: Timer = $DyingTimer
@@ -14,13 +18,31 @@ func activate() -> void:
 	dying_timer.connect("timeout", deactivate)
 	dying_timer.start(active_time)
 	
+	animate_frames()
+	
 	if not Globals.monster: return
 	Globals.monster.increase_speed()
 
 
 func deactivate() -> void:
 	dying_timer.stop()
+	animate_frames("dying")
+	await animation_completed
+	
 	queue_free()
 	
 	if not Globals.monster: return
 	Globals.monster.decrease_speed()
+
+
+func animate_frames(animation_name: String = "idle"):
+	var frames: Array[Texture] = frames_idle
+	if animation_name != "idle":
+		frames = frames_dying
+		
+	var frame_size: int = frames.size()
+	for i in range(0,frame_size):
+		self.texture = frames[i]
+		await get_tree().create_timer(0.1).timeout
+	
+	animation_completed.emit()

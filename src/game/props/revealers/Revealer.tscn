@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://d332hxcn8oksc"]
+[gd_scene load_steps=12 format=3 uid="uid://d332hxcn8oksc"]
 
-[ext_resource type="Texture2D" uid="uid://bfs18nmc80k37" path="res://src/assets/placeholder_light.webp" id="1_1up7c"]
+[ext_resource type="Texture2D" uid="uid://b4gf145bu0tnv" path="res://src/assets/props/light/light_idle/Light_Idle1.png" id="2_hy84s"]
 [ext_resource type="Script" uid="uid://b0th8mvwxodv1" path="res://src/game/props/revealers/revealer.gd" id="2_p4u50"]
+[ext_resource type="Texture2D" uid="uid://bjs5nxm7tsowx" path="res://src/assets/props/light/light_idle/Light_Idle2.png" id="3_ni3g7"]
+[ext_resource type="Texture2D" uid="uid://b1367rohnl4wf" path="res://src/assets/props/light/light_idle/Light_Idle3.png" id="4_2eojx"]
+[ext_resource type="Texture2D" uid="uid://cxyrlaxx5eryv" path="res://src/assets/props/light/light_idle/Light_Idle4.png" id="5_alnuq"]
+[ext_resource type="Texture2D" uid="uid://0yrjlx6g8w6i" path="res://src/assets/props/light/light_idle/Light_Idle5.png" id="6_p7dwd"]
+[ext_resource type="Texture2D" uid="uid://bvbff1levf65f" path="res://src/assets/props/light/light_idle/Light_Idle6.png" id="7_li5y3"]
+[ext_resource type="Texture2D" uid="uid://tbr7vd0klgag" path="res://src/assets/props/light/light_idle/Light_Idle7.png" id="8_8chf2"]
+[ext_resource type="Texture2D" uid="uid://dhibu3alpjmwp" path="res://src/assets/props/light/light_idle/Light_Idle8.png" id="9_iuqrr"]
+[ext_resource type="Texture2D" uid="uid://dlro7tdhbu54b" path="res://src/assets/props/light/light_idle/Light_Idle9.png" id="10_3afrt"]
+[ext_resource type="Texture2D" uid="uid://bp71u7oq12bjb" path="res://src/assets/props/light/light_idle/Light_Idle10.png" id="11_dxchw"]
 
 [node name="Light" type="PointLight2D"]
 blend_mode = 2
-texture = ExtResource("1_1up7c")
 script = ExtResource("2_p4u50")
+frames_idle = Array[Texture]([ExtResource("2_hy84s"), ExtResource("3_ni3g7"), ExtResource("4_2eojx"), ExtResource("5_alnuq"), ExtResource("6_p7dwd"), ExtResource("7_li5y3"), ExtResource("8_8chf2"), ExtResource("9_iuqrr"), ExtResource("10_3afrt"), ExtResource("11_dxchw")])
 
 [node name="DyingTimer" type="Timer" parent="."]

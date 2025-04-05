@@ -1,0 +1,34 @@
+[gd_resource type="AnimatedTexture" load_steps=11 format=3 uid="uid://c02874nxxw1lx"]
+
+[ext_resource type="Texture2D" uid="uid://b4gf145bu0tnv" path="res://src/assets/props/light/light_idle/Light_Idle1.png" id="1_n230h"]
+[ext_resource type="Texture2D" uid="uid://bjs5nxm7tsowx" path="res://src/assets/props/light/light_idle/Light_Idle2.png" id="2_lbiah"]
+[ext_resource type="Texture2D" uid="uid://b1367rohnl4wf" path="res://src/assets/props/light/light_idle/Light_Idle3.png" id="3_0xy47"]
+[ext_resource type="Texture2D" uid="uid://cxyrlaxx5eryv" path="res://src/assets/props/light/light_idle/Light_Idle4.png" id="4_bjh1i"]
+[ext_resource type="Texture2D" uid="uid://0yrjlx6g8w6i" path="res://src/assets/props/light/light_idle/Light_Idle5.png" id="5_vk3ef"]
+[ext_resource type="Texture2D" uid="uid://bvbff1levf65f" path="res://src/assets/props/light/light_idle/Light_Idle6.png" id="6_76jyc"]
+[ext_resource type="Texture2D" uid="uid://tbr7vd0klgag" path="res://src/assets/props/light/light_idle/Light_Idle7.png" id="7_0ypuk"]
+[ext_resource type="Texture2D" uid="uid://dhibu3alpjmwp" path="res://src/assets/props/light/light_idle/Light_Idle8.png" id="8_a28if"]
+[ext_resource type="Texture2D" uid="uid://dlro7tdhbu54b" path="res://src/assets/props/light/light_idle/Light_Idle9.png" id="9_kmu46"]
+[ext_resource type="Texture2D" uid="uid://bp71u7oq12bjb" path="res://src/assets/props/light/light_idle/Light_Idle10.png" id="10_qg3gn"]
+
+[resource]
+frames = 10
+frame_0/texture = ExtResource("1_n230h")
+frame_1/texture = ExtResource("2_lbiah")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_0xy47")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_bjh1i")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_vk3ef")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("6_76jyc")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("7_0ypuk")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("8_a28if")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("9_kmu46")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("10_qg3gn")
+frame_9/duration = 1.0
