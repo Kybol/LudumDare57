@@ -26,3 +26,5 @@ size_flags_vertical = 4
 color = Color(1, 0, 0, 1)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]
+
+[node name="FadeOutTimer" type="Timer" parent="." index="4"]

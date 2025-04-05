@@ -8,6 +8,13 @@ class_name Monster extends CharacterBody2D
 		target = new_target
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var fade_out_timer: Timer = $FadeOutTimer
+
+var tween: Tween
+
+
+func _ready() -> void:
+	self.modulate.a = 0.0
 
 
 func _physics_process(_delta: float) -> void:
@@ -31,3 +38,20 @@ func increase_speed() -> void:
 func decrease_speed() -> void:
 	if speed <= min_speed: return
 	speed -= 20
+
+
+func fade_in() -> void:
+	if tween:
+		tween.kill()
+	tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	var err = tween.tween_property(self, "modulate:a", 1.0, 1.0)
+	
+	fade_out_timer.start(3.0)
+	fade_out_timer.connect("timeout", fade_out)
+
+
+func fade_out() -> void:
+	if tween:
+		tween.kill
+	tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+	var err = tween.tween_property(self, "modulate:a", 0.0, 1.0)
