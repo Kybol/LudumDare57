@@ -108,6 +108,9 @@ sources/0 = SubResource("TileSetAtlasSource_xwwwq")
 [node name="PlayerStartMarker" parent="AlwaysVisibleLayer" index="0"]
 position = Vector2(661, 591)
 
+[node name="DarkLayer" parent="." index="1"]
+visible = false
+
 [node name="MonsterStartMarker" parent="." index="3"]
 position = Vector2(629, 378)
 
