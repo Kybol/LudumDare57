@@ -11,6 +11,7 @@ class_name Monster extends CharacterBody2D
 
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var fade_out_timer: Timer = $FadeOutTimer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var tween: Tween
 var fade
@@ -18,6 +19,7 @@ var fade
 
 func _ready() -> void:
 	self.modulate.a = 0.0
+	animation_player.play("Walk")
 	
 	if is_waiting: 
 		set_physics_process(false)
