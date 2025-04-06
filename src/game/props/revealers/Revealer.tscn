@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://d332hxcn8oksc"]
+[gd_scene load_steps=63 format=3 uid="uid://d332hxcn8oksc"]
 
 [ext_resource type="Texture2D" uid="uid://b4gf145bu0tnv" path="res://src/assets/props/light/light_idle/Light_Idle1.png" id="2_hy84s"]
 [ext_resource type="Script" uid="uid://b0th8mvwxodv1" path="res://src/game/props/revealers/revealer.gd" id="2_p4u50"]
@@ -59,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://co3xx7vdqw7ww" path="res://src/assets/props/light/light_dying/Light_Dying46.png" id="57_mov41"]
 [ext_resource type="Texture2D" uid="uid://c5bvurqsvnuh5" path="res://src/assets/props/light/light_dying/Light_Dying47.png" id="58_lmvmf"]
 [ext_resource type="Texture2D" uid="uid://dkdme0srwdrew" path="res://src/assets/props/light/light_dying/Light_Dying48.png" id="59_ugrj2"]
+[ext_resource type="AudioStream" uid="uid://c1uafm6qwn2t7" path="res://src/assets/sound/sonar_bip.mp3" id="60_ml048"]
 
 [sub_resource type="Gradient" id="Gradient_2qrwy"]
 offsets = PackedFloat32Array(0, 0.558442)
@@ -84,3 +85,7 @@ frames_dying = Array[Texture]([ExtResource("12_2qrwy"), ExtResource("13_ml048"),
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 0.5
 texture = SubResource("GradientTexture2D_ml048")
+
+[node name="sfx_sonar" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("60_ml048")
+volume_db = -10.0

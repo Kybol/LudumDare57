@@ -10,6 +10,7 @@ signal animation_completed
 
 @onready var dying_timer: Timer = $DyingTimer
 @onready var point_light: PointLight2D = $PointLight2D
+@onready var sfx_sonar: AudioStreamPlayer2D = $sfx_sonar
 
 var is_active: bool = false
 var active_time: float = max_active_time
@@ -31,6 +32,7 @@ func _ready() -> void:
 
 func activate() -> void:
 	is_active = true
+	sfx_sonar.play()
 	
 	dying_timer.connect("timeout", deactivate)
 	dying_timer.start(active_time)

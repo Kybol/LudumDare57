@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvqdli2c73w7p"]
+[gd_scene load_steps=15 format=3 uid="uid://dvqdli2c73w7p"]
 
 [ext_resource type="PackedScene" uid="uid://buqiyp5gpy1ot" path="res://src/game/agents/BaseAgent.tscn" id="1_x4eja"]
 [ext_resource type="Script" uid="uid://ccpufd1x3d5ax" path="res://src/game/agents/player.gd" id="2_knmqp"]
 [ext_resource type="PackedScene" uid="uid://d332hxcn8oksc" path="res://src/game/props/revealers/Revealer.tscn" id="3_vtlw8"]
 [ext_resource type="Texture2D" uid="uid://dhqm64ma8ffe6" path="res://src/assets/agents/player/Boy_animation_Idle-Sheet.png" id="4_navth"]
 [ext_resource type="Texture2D" uid="uid://cni08ajm8vv2t" path="res://src/assets/agents/player/Boy_animation_Run-Sheet.png" id="5_bwesq"]
+[ext_resource type="AudioStream" uid="uid://bp68xhuew237i" path="res://src/assets/sound/child_step_new.mp3" id="6_ehxmj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vtlw8"]
 radius = 7.0
@@ -128,5 +129,9 @@ root_node = NodePath("../Animations")
 libraries = {
 &"": SubResource("AnimationLibrary_02mri")
 }
+
+[node name="sfx_footstep" type="AudioStreamPlayer2D" parent="." index="6"]
+stream = ExtResource("6_ehxmj")
+volume_db = -10.0
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]

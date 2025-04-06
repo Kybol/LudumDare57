@@ -7,6 +7,7 @@ signal caught
 @onready var current_scale: float = scale.x
 @onready var idle_sprite: Sprite2D = $Animations/Idle
 @onready var run_sprite: Sprite2D = $Animations/Run
+@onready var sfx_footstep: AudioStreamPlayer2D = $sfx_footstep
 
 @export_range(0.0, 1000.0, 1.0) var speed: float = 100.0
 
@@ -52,6 +53,8 @@ func _on_detection_area_area_entered(area: Area2D) -> void:
 
 
 func idle() -> void:
+	sfx_footstep.stop()
+	
 	is_running = false
 	play_animation("Idle")
 
@@ -59,6 +62,8 @@ func idle() -> void:
 func run() -> void:
 	idle_sprite.flip_h = true if facing_direction_x > 0 else false
 	run_sprite.flip_h = true if facing_direction_x > 0 else false
+	
+	sfx_footstep.play()
 	is_running = true
 	play_animation("Run")
 
