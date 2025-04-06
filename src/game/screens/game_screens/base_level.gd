@@ -16,7 +16,6 @@ func _ready() -> void:
 	
 	fade_in_all(false, 0.0)
 	fade_in_all()
-	
 
 
 func spawn_agents() -> void:
@@ -35,7 +34,6 @@ func spawn_agents() -> void:
 	Globals.player = player
 	
 	fade_in_elements.append(player)
-	
 
 
 func fade_in_all(fade_in: bool = true, fade_time: float = 3.0) -> void:

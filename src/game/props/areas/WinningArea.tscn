@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dof68ividej3b"]
+
+[ext_resource type="Script" uid="uid://d2e7kvhxq4bii" path="res://src/game/props/areas/winning_area.gd" id="1_2qw5c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2m2c1"]
+radius = 51.0
+
+[node name="WinningArea" type="Area2D"]
+script = ExtResource("1_2qw5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2m2c1")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

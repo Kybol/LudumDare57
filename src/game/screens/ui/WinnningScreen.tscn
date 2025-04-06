@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl2ec07b65udp"]
+
+[ext_resource type="Script" uid="uid://sq568tsdn1kv" path="res://src/game/screens/ui/winnning_screen.gd" id="1_7yr6c"]
+
+[node name="WinnningScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7yr6c")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -76.0
+offset_right = 202.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CONGRATS ! YOU MADE IT TO YOUR PARENTS ROOM"
+
+[node name="VContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -33.0
+offset_right = 71.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NextButton" type="Button" parent="VContainer"]
+layout_mode = 2
+text = "NextLevel"
+
+[node name="Container" type="HBoxContainer" parent="VContainer"]
+layout_mode = 2
+
+[node name="BackToMain" type="Button" parent="VContainer/Container"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="QuitButton" type="Button" parent="VContainer/Container"]
+layout_mode = 2
+text = "Quit"
