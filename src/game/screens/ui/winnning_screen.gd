@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 func on_next_button_pressed() -> void:
-	pass
+	Utils.navigate_to("res://src/game/screens/test/lvl_nightmare.tscn")
 
 
 func on_quit_button_pressed() -> void:

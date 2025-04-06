@@ -3,6 +3,7 @@ extends Node
 var monster: Monster
 var player: Player
 var current_level
+var is_nightmare: bool
 
 
 func game_over() -> void:

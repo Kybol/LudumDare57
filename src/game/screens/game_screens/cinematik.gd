@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 func play_cinematik() -> void:
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(24.0).timeout
 	
 	var tween: Tween = create_tween()
 	tween.tween_property(black_screen, "modulate:a", 1.0, 1.0)

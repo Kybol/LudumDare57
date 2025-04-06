@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dpp7cxiolsou8"]
 
 [ext_resource type="Script" uid="uid://dg2fj76ophksv" path="res://src/game/screens/game_screens/cinematik.gd" id="1_7s7ok"]
-[ext_resource type="VideoStream" uid="uid://b48lpfad6aw2f" path="res://src/assets/cinematik/Cinématique-001.ogv" id="2_p3pmi"]
+[ext_resource type="VideoStream" uid="uid://syaaw216jiau" path="res://src/assets/cinematik/Ludum-Cinematique_finale_1.ogv" id="2_p3pmi"]
 
 [node name="Cinematik" type="Control"]
 layout_mode = 3
@@ -47,7 +47,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Cut1" type="VideoStreamPlayer" parent="CanvasLayer"]
+[node name="Video" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

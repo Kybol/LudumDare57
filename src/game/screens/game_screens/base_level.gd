@@ -2,6 +2,7 @@ class_name BaseLevel extends Control
 
 @export var fade_in_elements: Array[Node2D]
 @export var spawn_monster: bool = true
+@export var is_nightmare: bool = false
 
 @onready var player_start_marker: Marker2D = $AlwaysVisibleLayer/PlayerStartMarker
 @onready var monster_start_marker: Marker2D = $MonsterStartMarker
@@ -14,6 +15,10 @@ var monster_scene: PackedScene = preload("res://src/game/agents/Monster.tscn")
 func _ready() -> void:
 	spawn_agents()
 	Globals.current_level = self
+	Globals.is_nightmare = is_nightmare
+	
+	if is_nightmare: 
+		setup_nightmare()
 	
 	fade_in_all(false, 0.0)
 	fade_in_all()
@@ -49,3 +54,9 @@ func fade_in_all(fade_in: bool = true, fade_time: float = 3.0) -> void:
 
 func on_player_caught() -> void:
 	Globals.game_over()
+
+
+func setup_nightmare() -> void:
+	Globals.monster.min_speed = 50.0
+	Globals.monster.max_speed = 1000.0 
+	Globals.monster.speed_step = 30.0

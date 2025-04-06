@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://fpfqh7afyppx"]
+
+[ext_resource type="Script" uid="uid://bcvggjmn3plce" path="res://src/game/screens/game_screens/winning_cinematik.gd" id="1_bn2i0"]
+[ext_resource type="VideoStream" uid="uid://d704f324r3wx" path="res://src/assets/cinematik/Ludum-Fin.ogv" id="2_x2cas"]
+
+[node name="WinningCinematik" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bn2i0")
+
+[node name="Video" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_x2cas")
+autoplay = true
+expand = true

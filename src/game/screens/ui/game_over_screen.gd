@@ -11,7 +11,10 @@ func _ready() -> void:
 
 
 func on_replay_button_pressed() -> void:
-	Utils.navigate_to("res://src/game/screens/test/lvl_monster.tscn")
+	if not Globals.is_nightmare:
+		Utils.navigate_to("res://src/game/screens/test/lvl_monster.tscn")
+	else:
+		Utils.navigate_to("res://src/game/screens/test/lvl_nightmare.tscn")
 
 
 func on_quit_button_pressed() -> void:

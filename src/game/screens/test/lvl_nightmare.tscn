@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drkau6rc3w1xe"]
+
+[ext_resource type="PackedScene" uid="uid://bnrooertp0tuu" path="res://src/game/screens/test/lvl_monster.tscn" id="1_flyuk"]
+
+[node name="lvl_nightmare" instance=ExtResource("1_flyuk")]
+is_nightmare = true
