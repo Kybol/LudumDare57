@@ -3,7 +3,7 @@ class_name Monster extends CharacterBody2D
 @export_range(0.0, 1000.0, 1.0) var min_speed: float = 50.0
 @export_range(0.0, 1000.0, 1.0) var max_speed: float = 700.0
 @export_range(0.0, 1000.0, 1.0) var speed: float = min_speed
-@export_range(0.0, 1000.0, 1.0) var waiting_timer: float = 5.0
+@export_range(0.0, 1000.0, 1.0) var waiting_timer: float = 3.0
 @export var is_waiting: bool = true
 @export var target: CharacterBody2D:
 	set(new_target):

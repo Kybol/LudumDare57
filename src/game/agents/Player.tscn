@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvqdli2c73w7p"]
+[gd_scene load_steps=14 format=3 uid="uid://dvqdli2c73w7p"]
 
 [ext_resource type="PackedScene" uid="uid://buqiyp5gpy1ot" path="res://src/game/agents/BaseAgent.tscn" id="1_x4eja"]
 [ext_resource type="Script" uid="uid://ccpufd1x3d5ax" path="res://src/game/agents/player.gd" id="2_knmqp"]
 [ext_resource type="PackedScene" uid="uid://d332hxcn8oksc" path="res://src/game/props/revealers/Revealer.tscn" id="3_vtlw8"]
+[ext_resource type="Texture2D" uid="uid://dhqm64ma8ffe6" path="res://src/assets/agents/player/Boy_animation_Idle-Sheet.png" id="4_navth"]
+[ext_resource type="Texture2D" uid="uid://cni08ajm8vv2t" path="res://src/assets/agents/player/Boy_animation_Run-Sheet.png" id="5_bwesq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vtlw8"]
 radius = 7.0
@@ -19,10 +21,81 @@ fill = 1
 fill_from = Vector2(0.513761, 0.5)
 fill_to = Vector2(0.876147, 0.192661)
 
+[sub_resource type="Animation" id="Animation_bwesq"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Idle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_ehxmj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Idle:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Run:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_02mri"]
+resource_name = "Run"
+length = 1.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Run:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_02mri"]
+_data = {
+&"Idle": SubResource("Animation_bwesq"),
+&"RESET": SubResource("Animation_ehxmj"),
+&"Run": SubResource("Animation_02mri")
+}
+
 [node name="Player" groups=["player"] instance=ExtResource("1_x4eja")]
 script = ExtResource("2_knmqp")
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -42,6 +115,7 @@ shape = SubResource("CircleShape2D_vtlw8")
 shape = SubResource("CircleShape2D_knmqp")
 
 [node name="Light" parent="." index="3" instance=ExtResource("3_vtlw8")]
+energy = 0.5
 texture_scale = 0.3
 can_die = false
 show_ambient_light = false
@@ -49,5 +123,24 @@ show_ambient_light = false
 [node name="PointLight2D" type="PointLight2D" parent="." index="4"]
 energy = 0.5
 texture = SubResource("GradientTexture2D_navth")
+
+[node name="Animations" type="Node2D" parent="." index="5"]
+
+[node name="Idle" type="Sprite2D" parent="Animations" index="0"]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_navth")
+hframes = 8
+
+[node name="Run" type="Sprite2D" parent="Animations" index="1"]
+visible = false
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_bwesq")
+hframes = 11
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+root_node = NodePath("../Animations")
+libraries = {
+&"": SubResource("AnimationLibrary_02mri")
+}
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
