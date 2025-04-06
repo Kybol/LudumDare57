@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxbhohteh5vhx"
+path="res://.godot/imported/Investigationdiscovery - Feldup.mp3-15674a9ab832540fadc86a3c8236db42.mp3str"
+
+[deps]
+
+source_file="res://src/assets/sound/Investigationdiscovery - Feldup.mp3"
+dest_files=["res://.godot/imported/Investigationdiscovery - Feldup.mp3-15674a9ab832540fadc86a3c8236db42.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

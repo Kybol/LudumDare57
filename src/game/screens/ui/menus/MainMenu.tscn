@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq0tfxrfw5ogm"]
+[gd_scene load_steps=3 format=3 uid="uid://bq0tfxrfw5ogm"]
 
 [ext_resource type="Script" uid="uid://bi7eityjnl4gq" path="res://src/game/screens/ui/menus/MainMenu.gd" id="1_u5yd7"]
+[ext_resource type="AudioStream" uid="uid://dxbhohteh5vhx" path="res://src/assets/sound/Investigationdiscovery - Feldup.mp3" id="2_2fuk6"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -38,3 +39,8 @@ text = "Options"
 [node name="QuitButton" type="Button" parent="Container"]
 layout_mode = 2
 text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_2fuk6")
+autoplay = true
+parameters/looping = false
