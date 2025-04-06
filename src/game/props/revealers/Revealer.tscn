@@ -62,6 +62,8 @@
 
 [node name="Light" type="PointLight2D"]
 blend_mode = 2
+texture = ExtResource("2_hy84s")
+texture_scale = 1.5
 script = ExtResource("2_p4u50")
 frames_idle = Array[Texture]([ExtResource("2_hy84s"), ExtResource("3_ni3g7"), ExtResource("4_2eojx"), ExtResource("5_alnuq"), ExtResource("6_p7dwd"), ExtResource("7_li5y3"), ExtResource("8_8chf2"), ExtResource("9_iuqrr"), ExtResource("10_3afrt"), ExtResource("11_dxchw")])
 frames_dying = Array[Texture]([ExtResource("12_2qrwy"), ExtResource("13_ml048"), ExtResource("14_y83nt"), ExtResource("15_00nnh"), ExtResource("16_8fgt0"), ExtResource("17_l8tlw"), ExtResource("18_06bbn"), ExtResource("19_q2dot"), ExtResource("20_1ne1l"), ExtResource("21_alsu6"), ExtResource("22_okssc"), ExtResource("23_56mcc"), ExtResource("24_utyqj"), ExtResource("25_s4byq"), ExtResource("26_iyfx0"), ExtResource("27_uejis"), ExtResource("28_exdha"), ExtResource("29_qc5xm"), ExtResource("30_36yme"), ExtResource("31_3meaw"), ExtResource("32_sti73"), ExtResource("33_oo2wk"), ExtResource("34_8juky"), ExtResource("35_hh5on"), ExtResource("36_ipo8i"), ExtResource("37_uyljt"), ExtResource("38_eegek"), ExtResource("39_0cthv"), ExtResource("40_otsbu"), ExtResource("41_7ejs2"), ExtResource("42_5q7cd"), ExtResource("43_lseic"), ExtResource("44_tjy5i"), ExtResource("45_b6yma"), ExtResource("46_o61gf"), ExtResource("47_fxubt"), ExtResource("48_opker"), ExtResource("49_qgds8"), ExtResource("50_g28a8"), ExtResource("51_e8iji"), ExtResource("52_pig2u"), ExtResource("53_f6roc"), ExtResource("54_vk7wy"), ExtResource("55_ci2gw"), ExtResource("56_5umaq"), ExtResource("57_mov41"), ExtResource("58_lmvmf"), ExtResource("59_ugrj2")])
