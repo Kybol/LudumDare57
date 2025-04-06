@@ -1,10 +1,97 @@
-[gd_scene load_steps=2 format=3 uid="uid://h3sfixciml8g"]
+[gd_scene load_steps=15 format=3 uid="uid://h3sfixciml8g"]
 
 [ext_resource type="FontFile" uid="uid://tivitgqo2nu0" path="res://src/assets/font/Bahiana/Bahiana-Regular.ttf" id="1_xb7ba"]
+[ext_resource type="Texture2D" uid="uid://v6exjx75ro6x" path="res://src/assets/ui/spritesheet_playbutton.png" id="2_40pwj"]
+[ext_resource type="Script" uid="uid://dqd3cf713t1vm" path="res://src/game/screens/ui/buttons/menu_button.gd" id="2_xrkkt"]
+[ext_resource type="Texture2D" uid="uid://4dv4j2xp82ph" path="res://src/assets/ui/spritesheet_longbutton.png" id="4_wi8d4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xrkkt"]
+content_margin_left = 30.0
+content_margin_top = 10.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
+
+[sub_resource type="Theme" id="Theme_wi8d4"]
+Button/styles/normal = SubResource("StyleBoxEmpty_xrkkt")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag0sf"]
+atlas = ExtResource("2_40pwj")
+region = Rect2(0, 0, 250, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i43et"]
+atlas = ExtResource("2_40pwj")
+region = Rect2(250, 0, 250, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpkjd"]
+atlas = ExtResource("2_40pwj")
+region = Rect2(500, 0, 250, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f3aj1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag0sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i43et")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpkjd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3aj1"]
+atlas = ExtResource("4_wi8d4")
+region = Rect2(0, 0, 590, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pu2m"]
+atlas = ExtResource("4_wi8d4")
+region = Rect2(590, 0, 590, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woh77"]
+atlas = ExtResource("4_wi8d4")
+region = Rect2(1180, 0, 590, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tanr7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3aj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pu2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woh77")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="MenuButton" type="Button"]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 118.0
+offset_bottom = 78.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_wi8d4")
 theme_override_fonts/font = ExtResource("1_xb7ba")
 theme_override_font_sizes/font_size = 50
 text = "TEST"
+script = ExtResource("2_xrkkt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(57, 44)
+scale = Vector2(0.5875, 0.5875)
+sprite_frames = SubResource("SpriteFrames_f3aj1")
+frame_progress = 0.657706
+
+[node name="Long" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(51.5, 44)
+scale = Vector2(0.442373, 0.5875)
+sprite_frames = SubResource("SpriteFrames_tanr7")
+frame_progress = 0.714958

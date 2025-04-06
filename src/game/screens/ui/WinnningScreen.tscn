@@ -33,6 +33,7 @@ YOU MADE IT TO YOUR PARENTS ROOM"
 horizontal_alignment = 1
 
 [node name="VContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 250)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,18 +47,36 @@ offset_bottom = 154.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NextButton2" parent="VContainer" instance=ExtResource("3_otekb")]
+[node name="NextButton" parent="VContainer" instance=ExtResource("3_otekb")]
 layout_mode = 2
+size_flags_vertical = 6
 text = "Next Level"
 
+[node name="AnimatedSprite2D" parent="VContainer/NextButton" index="0"]
+visible = false
+
+[node name="Long" parent="VContainer/NextButton" index="1"]
+visible = true
+position = Vector2(101, 44)
+
 [node name="Container" type="HBoxContainer" parent="VContainer"]
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="BackToMain" parent="VContainer/Container" instance=ExtResource("3_otekb")]
 layout_mode = 2
+size_flags_horizontal = 6
 text = "Menu"
+
+[node name="AnimatedSprite2D" parent="VContainer/Container/BackToMain" index="0"]
+position = Vector2(65, 44)
+scale = Vector2(0.64, 0.5875)
 
 [node name="QuitButton" parent="VContainer/Container" instance=ExtResource("3_otekb")]
 layout_mode = 2
+size_flags_horizontal = 6
 text = "Quit"
+
+[editable path="VContainer/NextButton"]
+[editable path="VContainer/Container/BackToMain"]

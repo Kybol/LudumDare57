@@ -1,37 +1,69 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq0tfxrfw5ogm"]
+[gd_scene load_steps=7 format=3 uid="uid://bq0tfxrfw5ogm"]
 
 [ext_resource type="Script" uid="uid://bi7eityjnl4gq" path="res://src/game/screens/ui/menus/MainMenu.gd" id="1_u5yd7"]
+[ext_resource type="Texture2D" uid="uid://dmj1clgya5oq2" path="res://src/assets/ui/Main Menu.png" id="2_en3f1"]
+[ext_resource type="FontFile" uid="uid://tivitgqo2nu0" path="res://src/assets/font/Bahiana/Bahiana-Regular.ttf" id="3_2srav"]
 [ext_resource type="PackedScene" uid="uid://h3sfixciml8g" path="res://src/game/screens/ui/buttons/MenuButton.tscn" id="3_en3f1"]
+[ext_resource type="Texture2D" uid="uid://cm8dlg6s2ds0b" path="res://src/assets/ui/arrows.png" id="4_ngmer"]
+[ext_resource type="Texture2D" uid="uid://bvvhx2ebj8oc5" path="res://src/assets/ui/spacebar.png" id="5_2ohjq"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u5yd7")
 
+[node name="MainMenu" type="Sprite2D" parent="."]
+position = Vector2(575.667, 324.5)
+scale = Vector2(0.599074, 0.599074)
+texture = ExtResource("2_en3f1")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 126.0
+offset_top = 570.75
+offset_right = 267.0
+offset_bottom = 628.75
+theme_override_fonts/font = ExtResource("3_2srav")
+theme_override_font_sizes/font_size = 30
+text = "Controls :"
+
+[node name="Arrows" type="Sprite2D" parent="."]
+position = Vector2(313, 563.75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ngmer")
+
+[node name="Spacebar" type="Sprite2D" parent="."]
+position = Vector2(499, 584.75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_2ohjq")
+
 [node name="Container" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.5
-offset_top = -15.5
-offset_right = 80.5
-offset_bottom = 15.5
-grow_horizontal = 2
+offset_left = 265.0
+offset_top = -17.0
+offset_right = 515.0
+offset_bottom = 61.0
 grow_vertical = 2
 
 [node name="PlayButton" parent="Container" instance=ExtResource("3_en3f1")]
 layout_mode = 2
+size_flags_horizontal = 2
 text = "Play"
+
+[node name="AnimatedSprite2D" parent="Container/PlayButton" index="0"]
+position = Vector2(61, 44)
 
 [node name="QuitButton" parent="Container" instance=ExtResource("3_en3f1")]
 layout_mode = 2
+size_flags_horizontal = 10
 text = "Quit"
+
+[editable path="Container/PlayButton"]
