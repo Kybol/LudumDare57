@@ -21,6 +21,9 @@ script = ExtResource("1_8odx1")
 [node name="PlayerStartMarker" type="Marker2D" parent="AlwaysVisibleLayer"]
 position = Vector2(183, 539)
 
+[node name="FadeOutBlackScreen" type="ColorRect" parent="AlwaysVisibleLayer"]
+color = Color(0, 0, 0, 1)
+
 [node name="DarkLayer" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
