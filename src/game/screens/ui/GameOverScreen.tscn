@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca38j4fx6gt2n"]
+[gd_scene load_steps=5 format=3 uid="uid://ca38j4fx6gt2n"]
 
 [ext_resource type="Script" uid="uid://bx8yfxyoce8fb" path="res://src/game/screens/ui/game_over_screen.gd" id="1_7fw1v"]
 [ext_resource type="PackedScene" uid="uid://h3sfixciml8g" path="res://src/game/screens/ui/buttons/MenuButton.tscn" id="2_j71rw"]
 [ext_resource type="FontFile" uid="uid://tivitgqo2nu0" path="res://src/assets/font/Bahiana/Bahiana-Regular.ttf" id="2_kkx2h"]
+[ext_resource type="Texture2D" uid="uid://dckyiolqcgwx0" path="res://src/assets/ui/EcranMort.png" id="2_lyyq2"]
 
 [node name="GameOverScreen" type="Control"]
 layout_mode = 3
@@ -13,11 +14,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7fw1v")
 
+[node name="EcranMort" type="Sprite2D" parent="."]
+position = Vector2(577.889, 323.75)
+scale = Vector2(0.600463, 0.600463)
+texture = ExtResource("2_lyyq2")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 349.713
+offset_top = 287.722
+offset_right = -802.287
+offset_bottom = -360.278
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0431373, 0.054902, 0.0980392, 1)
@@ -29,62 +39,78 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -161.0
-offset_top = -166.0
-offset_right = 161.0
-offset_bottom = -51.0
+offset_left = -543.0
+offset_top = -259.0
+offset_right = -221.0
+offset_bottom = -144.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_kkx2h")
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 80
 text = "GAME OVER !"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Label2" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -122.0
-offset_top = -34.0
-offset_right = 122.0
-offset_bottom = 196.0
+offset_left = -535.0
+offset_top = -169.0
+offset_right = -145.0
+offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_kkx2h")
+theme_override_font_sizes/font_size = 40
+text = "The monster caught you"
 
-[node name="ReplayButton" parent="VBoxContainer" instance=ExtResource("2_j71rw")]
+[node name="ReplayButton" parent="." instance=ExtResource("2_j71rw")]
 layout_mode = 2
+offset_left = 46.0
+offset_top = 248.0
+offset_right = 195.0
+offset_bottom = 326.0
 size_flags_vertical = 6
 text = "Replay"
 
-[node name="AnimatedSprite2D" parent="VBoxContainer/ReplayButton" index="0"]
+[node name="AnimatedSprite2D" parent="ReplayButton" index="0"]
 position = Vector2(75, 45)
 scale = Vector2(0.76, 0.5875)
 
-[node name="Long" parent="VBoxContainer/ReplayButton" index="1"]
+[node name="Long" parent="ReplayButton" index="1"]
 position = Vector2(72, 44)
 
-[node name="Container" type="HBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 3
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -234.0
+offset_top = 170.0
+offset_right = -85.0
+offset_bottom = -164.0
+grow_horizontal = 0
+grow_vertical = 2
 
-[node name="BackToMain" parent="VBoxContainer/Container" instance=ExtResource("2_j71rw")]
+[node name="BackToMain" parent="VBoxContainer" instance=ExtResource("2_j71rw")]
 layout_mode = 2
 size_flags_horizontal = 6
+size_flags_vertical = 6
 text = "Menu
 "
 
-[node name="AnimatedSprite2D" parent="VBoxContainer/Container/BackToMain" index="0"]
+[node name="AnimatedSprite2D" parent="VBoxContainer/BackToMain" index="0"]
 position = Vector2(65.5, 44)
 scale = Vector2(0.66, 0.5875)
 
-[node name="QuitButton" parent="VBoxContainer/Container" instance=ExtResource("2_j71rw")]
+[node name="QuitButton" parent="VBoxContainer" instance=ExtResource("2_j71rw")]
 layout_mode = 2
 size_flags_horizontal = 6
+size_flags_vertical = 6
 text = "Quit"
 
-[editable path="VBoxContainer/ReplayButton"]
-[editable path="VBoxContainer/Container/BackToMain"]
+[editable path="ReplayButton"]
+[editable path="VBoxContainer/BackToMain"]

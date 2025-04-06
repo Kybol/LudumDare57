@@ -4,6 +4,7 @@ signal animation_completed
 
 @export var animate_puddle: bool = true
 @export var frames: Array[Texture] = []
+@export var deactivate: bool = false
 
 @onready var point_light: PointLight2D = $PointLight2D
 
@@ -16,6 +17,8 @@ func _ready() -> void:
 
 
 func _on_reveal_area_area_entered(area: Area2D) -> void:
+	if deactivate: return
+	
 	if not area.owner.is_in_group("monster"): return
 	
 	if not is_instance_valid(Globals.monster): return
@@ -23,6 +26,8 @@ func _on_reveal_area_area_entered(area: Area2D) -> void:
 
 
 func _on_reveal_area_area_exited(area: Area2D) -> void:
+	if deactivate: return
+	
 	if not area.owner.is_in_group("monster"): return
 	
 	if not is_instance_valid(Globals.monster): return

@@ -3,6 +3,7 @@ extends Control
 @onready var black_screen: ColorRect = $CanvasLayer/BlackScreen
 
 func _ready() -> void:
+	GlobalSound.stop_audio()
 	play_cinematik()
 
 

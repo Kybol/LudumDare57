@@ -13,6 +13,7 @@ var monster_scene: PackedScene = preload("res://src/game/agents/Monster.tscn")
 
 
 func _ready() -> void:
+	GlobalSound.play_audio()
 	spawn_agents()
 	Globals.current_level = self
 	Globals.is_nightmare = is_nightmare

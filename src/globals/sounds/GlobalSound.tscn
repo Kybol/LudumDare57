@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cofbutet8nniw"]
+
+[ext_resource type="Script" uid="uid://cltipgajbw66g" path="res://src/globals/sounds/global_sound.gd" id="1_ixvb1"]
+[ext_resource type="AudioStream" uid="uid://b7v76l0vci6fp" path="res://src/assets/sound/Feldup - Deafened by the absence of sounds.mp3" id="1_yrrkh"]
+[ext_resource type="AudioStream" uid="uid://dxbhohteh5vhx" path="res://src/assets/sound/Investigationdiscovery - Feldup.mp3" id="2_a3085"]
+[ext_resource type="AudioStream" uid="uid://cc27j05jwpu1q" path="res://src/assets/sound/Child_Dead.mp3" id="4_sc838"]
+
+[node name="GlobalSound" type="Node2D"]
+script = ExtResource("1_ixvb1")
+
+[node name="MainTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_yrrkh")
+volume_db = -20.0
+
+[node name="MenuTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_a3085")
+volume_db = -20.0
+autoplay = true
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_sc838")
+volume_db = -10.0

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl2ec07b65udp"]
+[gd_scene load_steps=5 format=3 uid="uid://bl2ec07b65udp"]
 
 [ext_resource type="Script" uid="uid://sq568tsdn1kv" path="res://src/game/screens/ui/winnning_screen.gd" id="1_7yr6c"]
 [ext_resource type="FontFile" uid="uid://tivitgqo2nu0" path="res://src/assets/font/Bahiana/Bahiana-Regular.ttf" id="2_lbnct"]
+[ext_resource type="Texture2D" uid="uid://dmj1clgya5oq2" path="res://src/assets/ui/Main Menu.png" id="2_otekb"]
 [ext_resource type="PackedScene" uid="uid://h3sfixciml8g" path="res://src/game/screens/ui/buttons/MenuButton.tscn" id="3_otekb"]
 
 [node name="WinnningScreen" type="Control"]
@@ -13,11 +14,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7yr6c")
 
+[node name="MainMenu" type="Sprite2D" parent="."]
+position = Vector2(578.556, 325.25)
+scale = Vector2(0.599537, 0.599537)
+texture = ExtResource("2_otekb")
+
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -393.0
+offset_bottom = -298.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0431373, 0.054902, 0.0980392, 1)
@@ -29,9 +37,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -357.5
+offset_left = -472.0
 offset_top = -213.0
-offset_right = 357.5
+offset_right = 243.0
 offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -47,9 +55,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -357.0
+offset_left = -471.5
 offset_top = -128.0
-offset_right = 358.0
+offset_right = 243.5
 offset_bottom = -59.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -66,9 +74,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
+offset_left = -314.5
 offset_top = -63.0
-offset_right = 150.0
+offset_right = 85.5
 offset_bottom = 187.0
 grow_horizontal = 2
 grow_vertical = 2

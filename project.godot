@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Utils="*res://src/globals/utils/Utils.gd"
 Globals="*res://src/globals/globals.gd"
+GlobalSound="*res://src/globals/sounds/GlobalSound.tscn"
 
 [display]
 

@@ -51,7 +51,7 @@ func increase_speed() -> void:
 
 func decrease_speed() -> void:
 	if speed <= min_speed: return
-	speed -= 20
+	speed -= speed_step
 
 
 func fade_in(has_to_fade_out: bool = true) -> void:

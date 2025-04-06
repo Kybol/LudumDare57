@@ -4,3 +4,18 @@
 
 [node name="lvl_nightmare" instance=ExtResource("1_flyuk")]
 is_nightmare = true
+
+[node name="LightPuddle" parent="LightPuddles" index="0"]
+visible = false
+animate_puddle = false
+deactivate = true
+
+[node name="LightPuddle3" parent="LightPuddles" index="2"]
+visible = false
+animate_puddle = false
+deactivate = true
+
+[node name="LightPuddle4" parent="LightPuddles" index="3"]
+visible = false
+animate_puddle = false
+deactivate = true
