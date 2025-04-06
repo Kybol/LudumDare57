@@ -1,8 +1,8 @@
 extends Control
 
-@onready var _replay_button: Button = $Container/ReplayButton
-@onready var _back_to_main: Button = $Container/BackToMain
-@onready var _quit_button: Button = $Container/QuitButton
+@onready var _replay_button: Button = $VBoxContainer/ReplayButton
+@onready var _back_to_main: Button = $VBoxContainer/Container/BackToMain
+@onready var _quit_button: Button = $VBoxContainer/Container/QuitButton
 
 func _ready() -> void:
 	_replay_button.connect("pressed", on_replay_button_pressed)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq0tfxrfw5ogm"]
+[gd_scene load_steps=3 format=3 uid="uid://bq0tfxrfw5ogm"]
 
 [ext_resource type="Script" uid="uid://bi7eityjnl4gq" path="res://src/game/screens/ui/menus/MainMenu.gd" id="1_u5yd7"]
+[ext_resource type="PackedScene" uid="uid://h3sfixciml8g" path="res://src/game/screens/ui/buttons/MenuButton.tscn" id="3_en3f1"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -27,14 +28,10 @@ offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PlayButton" type="Button" parent="Container"]
+[node name="PlayButton" parent="Container" instance=ExtResource("3_en3f1")]
 layout_mode = 2
 text = "Play"
 
-[node name="OptionButton" type="Button" parent="Container"]
-layout_mode = 2
-text = "Options"
-
-[node name="QuitButton" type="Button" parent="Container"]
+[node name="QuitButton" parent="Container" instance=ExtResource("3_en3f1")]
 layout_mode = 2
 text = "Quit"

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://h3sfixciml8g"]
+
+[ext_resource type="FontFile" uid="uid://tivitgqo2nu0" path="res://src/assets/font/Bahiana/Bahiana-Regular.ttf" id="1_xb7ba"]
+
+[node name="MenuButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_xb7ba")
+theme_override_font_sizes/font_size = 50
+text = "TEST"

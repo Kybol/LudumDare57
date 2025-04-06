@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ca38j4fx6gt2n"]
+[gd_scene load_steps=4 format=3 uid="uid://ca38j4fx6gt2n"]
 
 [ext_resource type="Script" uid="uid://bx8yfxyoce8fb" path="res://src/game/screens/ui/game_over_screen.gd" id="1_7fw1v"]
+[ext_resource type="PackedScene" uid="uid://h3sfixciml8g" path="res://src/game/screens/ui/buttons/MenuButton.tscn" id="2_j71rw"]
+[ext_resource type="FontFile" uid="uid://tivitgqo2nu0" path="res://src/assets/font/Bahiana/Bahiana-Regular.ttf" id="2_kkx2h"]
 
 [node name="GameOverScreen" type="Control"]
 layout_mode = 3
@@ -12,35 +14,49 @@ grow_vertical = 2
 script = ExtResource("1_7fw1v")
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 522.0
-offset_top = 244.0
-offset_right = 623.0
-offset_bottom = 267.0
-text = "GAME OVER !"
-
-[node name="Container" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -53.0
-offset_top = -15.5
-offset_right = 53.0
-offset_bottom = 15.5
+offset_left = -161.0
+offset_top = -144.0
+offset_right = 161.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_kkx2h")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER !"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.5
+offset_top = 6.0
+offset_right = 120.5
+offset_bottom = 142.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ReplayButton" type="Button" parent="Container"]
+[node name="ReplayButton" parent="VBoxContainer" instance=ExtResource("2_j71rw")]
 layout_mode = 2
 text = "Replay"
 
-[node name="BackToMain" type="Button" parent="Container"]
+[node name="Container" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-text = "Main Menu"
+size_flags_horizontal = 4
 
-[node name="QuitButton" type="Button" parent="Container"]
+[node name="BackToMain" parent="VBoxContainer/Container" instance=ExtResource("2_j71rw")]
+layout_mode = 2
+text = "Menu
+"
+
+[node name="QuitButton" parent="VBoxContainer/Container" instance=ExtResource("2_j71rw")]
 layout_mode = 2
 text = "Quit"

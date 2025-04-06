@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bl2ec07b65udp"]
+[gd_scene load_steps=4 format=3 uid="uid://bl2ec07b65udp"]
 
 [ext_resource type="Script" uid="uid://sq568tsdn1kv" path="res://src/game/screens/ui/winnning_screen.gd" id="1_7yr6c"]
+[ext_resource type="FontFile" uid="uid://tivitgqo2nu0" path="res://src/assets/font/Bahiana/Bahiana-Regular.ttf" id="2_lbnct"]
+[ext_resource type="PackedScene" uid="uid://h3sfixciml8g" path="res://src/game/screens/ui/buttons/MenuButton.tscn" id="3_otekb"]
 
 [node name="WinnningScreen" type="Control"]
 layout_mode = 3
@@ -18,13 +20,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -202.0
-offset_top = -76.0
-offset_right = 202.0
-offset_bottom = -53.0
+offset_left = -357.5
+offset_top = -208.0
+offset_right = 357.5
+offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "CONGRATS ! YOU MADE IT TO YOUR PARENTS ROOM"
+theme_override_fonts/font = ExtResource("2_lbnct")
+theme_override_font_sizes/font_size = 80
+text = "CONGRATS ! 
+YOU MADE IT TO YOUR PARENTS ROOM"
+horizontal_alignment = 1
 
 [node name="VContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -33,24 +39,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -33.0
-offset_right = 71.0
-offset_bottom = 33.0
+offset_left = -77.5
+offset_top = 18.0
+offset_right = 77.5
+offset_bottom = 154.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NextButton" type="Button" parent="VContainer"]
+[node name="NextButton2" parent="VContainer" instance=ExtResource("3_otekb")]
 layout_mode = 2
-text = "NextLevel"
+text = "Next Level"
 
 [node name="Container" type="HBoxContainer" parent="VContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 
-[node name="BackToMain" type="Button" parent="VContainer/Container"]
+[node name="BackToMain" parent="VContainer/Container" instance=ExtResource("3_otekb")]
 layout_mode = 2
-text = "Main Menu"
+text = "Menu"
 
-[node name="QuitButton" type="Button" parent="VContainer/Container"]
+[node name="QuitButton" parent="VContainer/Container" instance=ExtResource("3_otekb")]
 layout_mode = 2
 text = "Quit"
