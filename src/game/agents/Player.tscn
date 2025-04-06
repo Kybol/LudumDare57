@@ -132,6 +132,9 @@ libraries = {
 
 [node name="sfx_footstep" type="AudioStreamPlayer2D" parent="." index="6"]
 stream = ExtResource("6_ehxmj")
-volume_db = -10.0
+volume_db = -20.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." index="7"]
+current = true
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
