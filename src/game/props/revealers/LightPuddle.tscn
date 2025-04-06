@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bc5if6vyiiqwy"]
+[gd_scene load_steps=18 format=3 uid="uid://bc5if6vyiiqwy"]
 
 [ext_resource type="Script" uid="uid://44q3nirfp3lx" path="res://src/game/props/revealers/light_puddle.gd" id="1_u4h2j"]
 [ext_resource type="Texture2D" uid="uid://taspsba6j00i" path="res://src/assets/props/light/window/window_anim/Window1.png" id="2_pxm5h"]
@@ -18,6 +18,15 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_2l3vk"]
 radius = 86.0233
 
+[sub_resource type="Gradient" id="Gradient_pxm5h"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t2vcy"]
+gradient = SubResource("Gradient_pxm5h")
+fill = 1
+fill_from = Vector2(0.509174, 0.513761)
+fill_to = Vector2(0.798165, 0.807339)
+
 [node name="LightPuddle" type="Node2D"]
 script = ExtResource("1_u4h2j")
 frames = Array[Texture]([ExtResource("2_pxm5h"), ExtResource("3_t2vcy"), ExtResource("4_ncrpf"), ExtResource("5_s21oh"), ExtResource("6_y3d4m"), ExtResource("7_v4wkb"), ExtResource("8_nc04o"), ExtResource("9_oeyee"), ExtResource("10_clny1"), ExtResource("11_k4uuk"), ExtResource("12_ycrdd"), ExtResource("13_uka24")])
@@ -32,6 +41,10 @@ texture = ExtResource("2_u4h2j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RevealArea"]
 shape = SubResource("CircleShape2D_2l3vk")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+scale = Vector2(5.37891, 5.37891)
+texture = SubResource("GradientTexture2D_t2vcy")
 
 [connection signal="area_entered" from="RevealArea" to="." method="_on_reveal_area_area_entered"]
 [connection signal="area_exited" from="RevealArea" to="." method="_on_reveal_area_area_exited"]
