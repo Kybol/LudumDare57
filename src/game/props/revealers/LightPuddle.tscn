@@ -1,18 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://bc5if6vyiiqwy"]
+[gd_scene load_steps=16 format=3 uid="uid://bc5if6vyiiqwy"]
 
-[ext_resource type="Texture2D" uid="uid://b4gf145bu0tnv" path="res://src/assets/props/light/light_idle/Light_Idle1.png" id="1_2l3vk"]
 [ext_resource type="Script" uid="uid://44q3nirfp3lx" path="res://src/game/props/revealers/light_puddle.gd" id="1_u4h2j"]
+[ext_resource type="Texture2D" uid="uid://taspsba6j00i" path="res://src/assets/props/light/window/window_anim/Window1.png" id="2_pxm5h"]
+[ext_resource type="Texture2D" uid="uid://bsxh57xh6swau" path="res://src/assets/props/light/window/Window.png" id="2_u4h2j"]
+[ext_resource type="Texture2D" uid="uid://dojd2jykbigv0" path="res://src/assets/props/light/window/window_anim/Window2.png" id="3_t2vcy"]
+[ext_resource type="Texture2D" uid="uid://molk1ecpsvi1" path="res://src/assets/props/light/window/window_anim/Window3.png" id="4_ncrpf"]
+[ext_resource type="Texture2D" uid="uid://d3ydjuuo0kx64" path="res://src/assets/props/light/window/window_anim/Window4.png" id="5_s21oh"]
+[ext_resource type="Texture2D" uid="uid://b5xh33hnyw00o" path="res://src/assets/props/light/window/window_anim/Window5.png" id="6_y3d4m"]
+[ext_resource type="Texture2D" uid="uid://d2ya6p5wdx2ph" path="res://src/assets/props/light/window/window_anim/Window6.png" id="7_v4wkb"]
+[ext_resource type="Texture2D" uid="uid://b8vl5qce3mgrl" path="res://src/assets/props/light/window/window_anim/Window7.png" id="8_nc04o"]
+[ext_resource type="Texture2D" uid="uid://b05evdciave5w" path="res://src/assets/props/light/window/window_anim/Window8.png" id="9_oeyee"]
+[ext_resource type="Texture2D" uid="uid://cwe28pyt42qa3" path="res://src/assets/props/light/window/window_anim/Window9.png" id="10_clny1"]
+[ext_resource type="Texture2D" uid="uid://cac6o5nlgvcvp" path="res://src/assets/props/light/window/window_anim/Window10.png" id="11_k4uuk"]
+[ext_resource type="Texture2D" uid="uid://b4ig4tl2i3hap" path="res://src/assets/props/light/window/window_anim/Window11.png" id="12_ycrdd"]
+[ext_resource type="Texture2D" uid="uid://caakv8cyaxeno" path="res://src/assets/props/light/window/window_anim/Window12.png" id="13_uka24"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2l3vk"]
 radius = 86.0233
 
 [node name="LightPuddle" type="Node2D"]
 script = ExtResource("1_u4h2j")
+frames = Array[Texture]([ExtResource("2_pxm5h"), ExtResource("3_t2vcy"), ExtResource("4_ncrpf"), ExtResource("5_s21oh"), ExtResource("6_y3d4m"), ExtResource("7_v4wkb"), ExtResource("8_nc04o"), ExtResource("9_oeyee"), ExtResource("10_clny1"), ExtResource("11_k4uuk"), ExtResource("12_ycrdd"), ExtResource("13_uka24")])
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(1.90735e-06, -1.90735e-06)
 scale = Vector2(1.70703, 1.70703)
-texture = ExtResource("1_2l3vk")
+energy = 0.5
+texture = ExtResource("2_u4h2j")
 
 [node name="RevealArea" type="Area2D" parent="."]
 

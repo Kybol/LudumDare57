@@ -796,12 +796,15 @@ shape = SubResource("CapsuleShape2D_emxro")
 
 [node name="LightPuddle" parent="LightPuddles" index="0" instance=ExtResource("4_7kb5b")]
 position = Vector2(102, 97)
+scale = Vector2(0.5, 0.5)
 
 [node name="LightPuddle2" parent="LightPuddles" index="1" instance=ExtResource("4_7kb5b")]
 position = Vector2(1050, 554)
+animate_puddle = false
 
 [node name="LightPuddle3" parent="LightPuddles" index="2" instance=ExtResource("4_7kb5b")]
 position = Vector2(1063, 86)
+scale = Vector2(0.5, 0.5)
 
 [node name="LightPuddle4" parent="LightPuddles" index="3" instance=ExtResource("4_7kb5b")]
 position = Vector2(584, 589)
