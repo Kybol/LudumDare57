@@ -3,6 +3,8 @@ class_name Monster extends CharacterBody2D
 @export_range(0.0, 1000.0, 1.0) var min_speed: float = 50.0
 @export_range(0.0, 1000.0, 1.0) var max_speed: float = 700.0
 @export_range(0.0, 1000.0, 1.0) var speed: float = min_speed
+@export_range(0.0, 1000.0, 1.0) var waiting_timer: float = 5.0
+@export var is_waiting: bool = true
 @export var target: CharacterBody2D:
 	set(new_target):
 		target = new_target
@@ -16,6 +18,14 @@ var fade
 
 func _ready() -> void:
 	self.modulate.a = 0.0
+	
+	if is_waiting: 
+		set_physics_process(false)
+		await get_tree().create_timer(waiting_timer).timeout
+		
+		set_physics_process(true)
+	speed = min_speed
+	follow_noise(Globals.player)
 
 
 func _physics_process(_delta: float) -> void:

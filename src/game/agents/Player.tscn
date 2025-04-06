@@ -1,13 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvqdli2c73w7p"]
+[gd_scene load_steps=8 format=3 uid="uid://dvqdli2c73w7p"]
 
 [ext_resource type="PackedScene" uid="uid://buqiyp5gpy1ot" path="res://src/game/agents/BaseAgent.tscn" id="1_x4eja"]
 [ext_resource type="Script" uid="uid://ccpufd1x3d5ax" path="res://src/game/agents/player.gd" id="2_knmqp"]
+[ext_resource type="PackedScene" uid="uid://d332hxcn8oksc" path="res://src/game/props/revealers/Revealer.tscn" id="3_vtlw8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vtlw8"]
 radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_knmqp"]
 radius = 12.1655
+
+[sub_resource type="Gradient" id="Gradient_vtlw8"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_navth"]
+gradient = SubResource("Gradient_vtlw8")
+fill = 1
+fill_from = Vector2(0.513761, 0.5)
+fill_to = Vector2(0.876147, 0.192661)
 
 [node name="Player" groups=["player"] instance=ExtResource("1_x4eja")]
 script = ExtResource("2_knmqp")
@@ -30,5 +40,14 @@ shape = SubResource("CircleShape2D_vtlw8")
 
 [node name="CollisionShape2D" parent="DetectionArea" index="0"]
 shape = SubResource("CircleShape2D_knmqp")
+
+[node name="Light" parent="." index="3" instance=ExtResource("3_vtlw8")]
+texture_scale = 0.3
+can_die = false
+show_ambient_light = false
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="4"]
+energy = 0.5
+texture = SubResource("GradientTexture2D_navth")
 
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]

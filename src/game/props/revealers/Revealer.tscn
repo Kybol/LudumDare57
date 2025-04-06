@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://d332hxcn8oksc"]
+[gd_scene load_steps=62 format=3 uid="uid://d332hxcn8oksc"]
 
 [ext_resource type="Texture2D" uid="uid://b4gf145bu0tnv" path="res://src/assets/props/light/light_idle/Light_Idle1.png" id="2_hy84s"]
 [ext_resource type="Script" uid="uid://b0th8mvwxodv1" path="res://src/game/props/revealers/revealer.gd" id="2_p4u50"]
@@ -60,10 +60,27 @@
 [ext_resource type="Texture2D" uid="uid://c5bvurqsvnuh5" path="res://src/assets/props/light/light_dying/Light_Dying47.png" id="58_lmvmf"]
 [ext_resource type="Texture2D" uid="uid://dkdme0srwdrew" path="res://src/assets/props/light/light_dying/Light_Dying48.png" id="59_ugrj2"]
 
+[sub_resource type="Gradient" id="Gradient_2qrwy"]
+offsets = PackedFloat32Array(0, 0.558442)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ml048"]
+gradient = SubResource("Gradient_2qrwy")
+width = 300
+height = 300
+fill = 1
+fill_from = Vector2(0.490826, 0.481651)
+fill_to = Vector2(0, 1)
+
 [node name="Light" type="PointLight2D"]
 blend_mode = 2
+texture_scale = 1.5
 script = ExtResource("2_p4u50")
 frames_idle = Array[Texture]([ExtResource("2_hy84s"), ExtResource("3_ni3g7"), ExtResource("4_2eojx"), ExtResource("5_alnuq"), ExtResource("6_p7dwd"), ExtResource("7_li5y3"), ExtResource("8_8chf2"), ExtResource("9_iuqrr"), ExtResource("10_3afrt"), ExtResource("11_dxchw")])
 frames_dying = Array[Texture]([ExtResource("12_2qrwy"), ExtResource("13_ml048"), ExtResource("14_y83nt"), ExtResource("15_00nnh"), ExtResource("16_8fgt0"), ExtResource("17_l8tlw"), ExtResource("18_06bbn"), ExtResource("19_q2dot"), ExtResource("20_1ne1l"), ExtResource("21_alsu6"), ExtResource("22_okssc"), ExtResource("23_56mcc"), ExtResource("24_utyqj"), ExtResource("25_s4byq"), ExtResource("26_iyfx0"), ExtResource("27_uejis"), ExtResource("28_exdha"), ExtResource("29_qc5xm"), ExtResource("30_36yme"), ExtResource("31_3meaw"), ExtResource("32_sti73"), ExtResource("33_oo2wk"), ExtResource("34_8juky"), ExtResource("35_hh5on"), ExtResource("36_ipo8i"), ExtResource("37_uyljt"), ExtResource("38_eegek"), ExtResource("39_0cthv"), ExtResource("40_otsbu"), ExtResource("41_7ejs2"), ExtResource("42_5q7cd"), ExtResource("43_lseic"), ExtResource("44_tjy5i"), ExtResource("45_b6yma"), ExtResource("46_o61gf"), ExtResource("47_fxubt"), ExtResource("48_opker"), ExtResource("49_qgds8"), ExtResource("50_g28a8"), ExtResource("51_e8iji"), ExtResource("52_pig2u"), ExtResource("53_f6roc"), ExtResource("54_vk7wy"), ExtResource("55_ci2gw"), ExtResource("56_5umaq"), ExtResource("57_mov41"), ExtResource("58_lmvmf"), ExtResource("59_ugrj2")])
 
 [node name="DyingTimer" type="Timer" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.5
+texture = SubResource("GradientTexture2D_ml048")

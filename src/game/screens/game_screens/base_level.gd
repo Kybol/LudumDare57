@@ -1,6 +1,7 @@
 class_name BaseLevel extends Control
 
 @export var fade_in_elements: Array[Node2D]
+@export var spawn_monster: bool = true
 
 @onready var player_start_marker: Marker2D = $AlwaysVisibleLayer/PlayerStartMarker
 @onready var monster_start_marker: Marker2D = $MonsterStartMarker
@@ -20,20 +21,21 @@ func _ready() -> void:
 
 func spawn_agents() -> void:
 	var player: Player = player_scene.instantiate()
-	var monster: Monster = monster_scene.instantiate()
 	always_visible_layer.add_child(player)
-	always_visible_layer.add_child(monster)
 	
 	player.global_position = player_start_marker.global_position
-	monster.global_position = monster_start_marker.global_position
-
-	monster.follow_noise(player)
 	player.connect("caught", on_player_caught)
-	
-	Globals.monster = monster
 	Globals.player = player
 	
 	fade_in_elements.append(player)
+	
+	if not spawn_monster: return
+	var monster: Monster = monster_scene.instantiate()
+	always_visible_layer.add_child(monster)
+	
+	monster.global_position = monster_start_marker.global_position
+	Globals.monster = monster
+	
 
 
 func fade_in_all(fade_in: bool = true, fade_time: float = 3.0) -> void:

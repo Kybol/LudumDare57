@@ -2,14 +2,31 @@ extends PointLight2D
 
 signal animation_completed
 
+@export var can_die: bool = true
+@export var show_ambient_light: bool = true
 @export var frames_idle: Array[Texture] = []
 @export var frames_dying: Array[Texture] = []
 @export_range(0.0, 10.0) var max_active_time = 1.2
 
 @onready var dying_timer: Timer = $DyingTimer
+@onready var point_light: PointLight2D = $PointLight2D
 
 var is_active: bool = false
 var active_time: float = max_active_time
+
+
+func _ready() -> void:
+	if show_ambient_light:
+		point_light.show()
+	else:
+		point_light.hide()
+	
+	if can_die: return
+	is_active = true
+	
+	while true:
+		animate_frames()
+		await animation_completed
 
 
 func activate() -> void:

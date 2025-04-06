@@ -25,7 +25,9 @@ func reveal_area() -> void:
 	
 	revealer.global_position = global_position
 	revealer.activate()
-	Globals.monster.fade_in()
+	
+	if is_instance_valid(Globals.monster):
+		Globals.monster.fade_in()
 
 
 func _on_detection_area_area_entered(area: Area2D) -> void:
